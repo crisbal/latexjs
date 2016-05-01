@@ -6,7 +6,7 @@
 
 Using ES6 Javascript
 
-```
+```javascript
 let doc = new Document("report");
 
 let env = new Environment("testEnv");
