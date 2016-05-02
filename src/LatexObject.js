@@ -1,4 +1,4 @@
-import "./Util"
+import "./ObjectsUtil"
 
 export default class LatexObject {
 
