@@ -3,23 +3,23 @@ import Command from "./Command";
 
 export default class Environment extends LatexObject{
 
-    constructor(name) {
-        super();
+  constructor(name) {
+    super();
 
-        this.name = name;
-    }
+    this.name = name;
+  }
 
-    render() {
-        let begin = new Command("begin",[this.name]).render();
+  render() {
+    let begin = new Command("begin",[this.name]).render();
 
-        let middle = ""
+    let middle = ""
 
-        for (const object of this.content) {
-            middle += object.render();
-        } 
+    for (const object of this.content) {
+      middle += object.render();
+    } 
 
-        let end = new Command("end",[this.name]).render() + "\n";
+    let end = new Command("end",[this.name]).render() + "\n";
 
-        return (begin + middle + end)
-    }
+    return (begin + middle + end)
+  }
 }

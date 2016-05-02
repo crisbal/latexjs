@@ -2,30 +2,24 @@ import "./Util"
 
 export default class LatexObject {
 
-    constructor() {
-        this.newLineBefore = false;
-        this.newLineAfter = true;
+  constructor() {
+    this.content = [];
+  }
 
-        this.isEscaped = true;
+  render() {
+    let body = ""
 
-        this.content = [];
-    }
+    for (const object of this.content) {
+      body += object.render();
+    } 
 
-
-    render() {
-        let body = ""
-
-        for (const object of this.content) {
-            body += object.render();
-        } 
-
-        return body;
-    }
+    return body;
+  }
 
 
-    append(...args) {
-        for(const latexObject of args)
-            this.content.push(latexObject);
-    }
+  append(...args) {
+    for(const latexObject of args)
+      this.content.push(latexObject);
+  }
 
 }
