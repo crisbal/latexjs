@@ -1,6 +1,6 @@
-import LatexObject from "./LatexObject";
+import Block from "./Block";
 
-export class Math extends LatexObject{
+export class InlineMath extends Block {
 
   constructor(math) {
     super();
@@ -8,14 +8,13 @@ export class Math extends LatexObject{
     this.math = math;
   }
 
-
   render() {
     let command = "$%s$".format(this.math);
     return command;
   }
 }
 
-export class DisplayMath extends Math{
+export class DisplayMath extends Math {
 
   render() {
     let command = "\n$$%s$$".format(this.math);

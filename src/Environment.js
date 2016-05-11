@@ -1,7 +1,7 @@
-import LatexObject from "./LatexObject";
+import Block from "./Block";
 import Command from "./Command";
 
-export default class Environment extends LatexObject{
+export default class Environment extends Block {
 
   constructor(name) {
     super();
@@ -10,16 +10,16 @@ export default class Environment extends LatexObject{
   }
 
   render() {
-    let begin = new Command("begin",[this.name]).render();
+    let begin = new Command("begin", [this.name]).render();
 
-    let middle = ""
+    let middle = "";
 
     for (const object of this.content) {
       middle += object.render();
-    } 
+    }
 
-    let end = new Command("end",[this.name]).render() + "\n";
+    let end = new Command("end", [this.name]).render() + "\n";
 
-    return (begin + middle + end)
+    return (begin + middle + end);
   }
 }

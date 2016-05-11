@@ -1,13 +1,12 @@
-import LatexObject from "./LatexObject";
+import Block from "./Block";
 
-export class Text extends LatexObject{
+export class Text extends Block {
 
   constructor(text) {
     super();
 
-    this.text = text;
+    this.text = text.escaped;
   }
-
 
   render() {
     let output = "%s".format(this.text);
@@ -15,7 +14,7 @@ export class Text extends LatexObject{
   }
 }
 
-export class Paragraph extends Text{ 
+export class Paragraph extends Text {
 
   render() {
     let output = "\n\n%s\n".format(this.text);

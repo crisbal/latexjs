@@ -8,7 +8,7 @@ describe("Command", () => {
   let command;
 
   it("should construct", () => {
-    command = new Command("test",[]).should.instanceof(Command);
+    command = new Command("test", []).should.instanceof(Command);
   });
 
 });
